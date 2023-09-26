@@ -1,0 +1,74 @@
+POST http://127.0.0.1:8000/account/api/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "rgcheck",
+    "college_id": "aktu1",
+    "password": "Qwerty@123"
+}
+
+###
+
+POST http://127.0.0.1:8000/account/api/register/ HTTP/1.1
+content-type: application/json
+
+{
+
+    "name": "rishabh",
+    "description":"admin testing",
+    "username": "rgcheck",
+    "college_id": "aktu1",
+    "password": "Qwerty@123"
+}
+
+###
+
+POST http://127.0.0.1:8000/project/projects/create/ HTTP/1.1
+content-type: application/json
+Authorization: Token e9273fe63e07b70907cea7688c016a0960d6a8f0
+
+{
+    "name": "rishabh",
+    "description":"admin testing",
+    "image": "testimage.jpg",
+    "project_file": "gamestore.zip"
+}
+
+###
+
+
+GET http://127.0.0.1:8000/project/ HTTP/1.1
+
+
+
+iska response aisa hoga:
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "rishabhproject",
+      "description": "check description",
+      "image": "/media/project_images/testimage.jpeg",
+      "project_file": "/media/project_files/gamestore.rar",
+      "created_at": "2023-09-16T17:11:30.114536Z",
+      "created_by": 1
+    }
+  ]
+}
+
+###
+
+
+GET http://127.0.0.1:8000/project/<project_id> 1 HTTP/1.1
+
+
+iska reponse for project_id=1:
+{
+  "id": 1,
+  "name": "rishabhproject",
+  "description": "check description",
+  "image": "/media/project_images/testimage.jpeg",
+  "project_file": "/media/project_files/gamestore.rar",
+  "created_at": "2023-09-16T17:11:30.114536Z",
+  "created_by": 1
+}
